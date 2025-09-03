@@ -1,0 +1,165 @@
+/* Responsive styles for the application */
+
+/* Base styles for all screens */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make images and media responsive */
+img, 
+video, 
+canvas, 
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #root {
+    padding: 0;     /* Remove padding for full width */
+  }
+  
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  /* Override MUI styles for mobile */
+  .MuiContainer-root {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Make cards stack on mobile */
+  .MuiGrid-container {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Adjust button sizes on mobile */
+  .MuiButton-root {
+    padding: 0.4em 0.8em !important;
+    font-size: 0.9em !important;
+  }
+  
+  /* Form adjustments */
+  .MuiFormControl-root {
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  #root {
+    padding: 0;     /* Remove padding for full width */
+  }
+  
+  /* Adjust container padding */
+  .MuiContainer-root {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  /* Reduce margins between grid items */
+  .MuiGrid-item {
+    padding: 8px !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* Maintain reasonable font sizes */
+  body {
+    font-size: 16px;
+  }
+  
+  /* Adjust card padding */
+  .MuiCard-root {
+    padding: 16px !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* Maintain desktop-like layout with full width */
+  #root {
+    max-width: 100%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #root {
+    max-width: 100%;
+  }
+}
+
+/* Navbar specific responsive styles */
+@media only screen and (max-width: 768px) {
+  /* Stack navbar buttons on smaller screens */
+  .MuiToolbar-root {
+    flex-direction: column !important;
+    padding: 8px !important;
+  }
+  
+  .MuiToolbar-root > .MuiTypography-root {
+    margin-bottom: 8px !important;
+  }
+  
+  /* Fix alignment of user menu */
+  .MuiBox-root {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  
+  /* Make buttons full width */
+  .MuiToolbar-root .MuiButton-root {
+    width: 100% !important;
+    margin: 4px 0 !important;
+  }
+}
+
+/* Print-specific styles */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  #root {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Hide navigation and UI elements when printing */
+  header, 
+  nav, 
+  footer, 
+  .MuiAppBar-root,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Ensure content is clearly visible */
+  .MuiPaper-root,
+  .MuiCard-root {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+  
+  /* Set appropriate text colors */
+  .MuiTypography-root {
+    color: black !important;
+  }
+}
